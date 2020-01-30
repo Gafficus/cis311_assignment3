@@ -1,0 +1,10 @@
+C:\Users\gaffn\source\repos\assignment3\bin\Debug\assignment3.exe.config
+C:\Users\gaffn\source\repos\assignment3\bin\Debug\assignment3.exe
+C:\Users\gaffn\source\repos\assignment3\bin\Debug\assignment3.pdb
+C:\Users\gaffn\source\repos\assignment3\bin\Debug\assignment3.xml
+C:\Users\gaffn\source\repos\assignment3\obj\Debug\assignment3.vbprojAssemblyReference.cache
+C:\Users\gaffn\source\repos\assignment3\obj\Debug\assignment3.Resources.resources
+C:\Users\gaffn\source\repos\assignment3\obj\Debug\assignment3.vbproj.GenerateResource.cache
+C:\Users\gaffn\source\repos\assignment3\obj\Debug\assignment3.exe
+C:\Users\gaffn\source\repos\assignment3\obj\Debug\assignment3.xml
+C:\Users\gaffn\source\repos\assignment3\obj\Debug\assignment3.pdb
