@@ -6,6 +6,8 @@
         strDate
     End Enum
     Sub Main()
+        Dim testMax As Integer = Integer.MinValue
+        Dim testMin As Integer = Integer.MaxValue
         configureConsole()
         Console.WriteLine("Please Enter the path and the name " +
                            "of the file containing the measurements:")
@@ -17,6 +19,11 @@
         For Each item As udtPotionBottle In lstTestList
             Console.WriteLine(item)
         Next
+        For Each e As udtPotionBottle In lstTestList
+            testMax = Math.Max(testMax, e.getIntFilledVolume())
+            testMin = Math.Min(testMin, e.getIntFilledVolume())
+        Next
+        Console.WriteLine("Max: " & testMax & " Min: " & testMin)
         Console.ReadLine()
     End Sub
     Private Sub readInputFile()
@@ -30,17 +37,22 @@
                                                 strContents(enuConstructor.intVolume),
                                                 strContents(enuConstructor.strDate)))
         End While
-        lstTestList.Sort(Function(x, y) x.getIntFilledVolume.CompareTo(y.getIntFilledVolume))
+        lstTestList.Sort(Function(aBottle, anotherBottle)
+                             Return aBottle.getIntFilledVolume.CompareTo(anotherBottle.getIntFilledVolume)
+                         End Function)
         objMyStreamReader.Close()
     End Sub
     Private Sub configureConsole()
+        Const INTWINDOWWIDTH = 80
+        Const INTWINDOWHEIGHT = 30
+        Const STRWINDOWTITLE = "Snape Potion Manufacturing Quality Program"
         Dim testObj As Console
         With testObj
             .ForegroundColor = ConsoleColor.White
             .BackgroundColor = ConsoleColor.Blue
-            .WindowWidth = 80
-            .WindowHeight = 30
-            .Title = "Title Here"
+            .WindowWidth = INTWINDOWWIDTH
+            .WindowHeight = INTWINDOWHEIGHT
+            .Title = STRWINDOWTITLE
         End With
         'Console.ForegroundColor = ConsoleColor.White
         'Console.BackgroundColor = ConsoleColor.Blue
