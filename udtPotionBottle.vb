@@ -2,6 +2,9 @@
     Private intID As Integer
     Private intFilledVolume As Integer
     Private strDateAsString As String
+    Enum intDesired
+        Volume = 1000
+    End Enum
     Public Function getIntID()
         Return intID
     End Function
@@ -25,7 +28,19 @@
         Return intID & vbTab & intFilledVolume & vbTab & strDateAsString
     End Function
     Public Overrides Function ToString() As String
-        Return intID & vbTab & intFilledVolume & vbTab & strDateAsString
+        Return createHistogram()
+    End Function
+    Private Function createHistogram() As String
+        Dim strHistogram As String = "Feature Not yet implemented"
+
+        Dim strCharToRepresentHistogram As String = "*"
+        If (intDesired.Volume = intFilledVolume) Then
+            strCharToRepresentHistogram = "="
+        End If
+
+        'Logic for the histogram
+        Return "(" & intID & ")" & vbTab & intFilledVolume &
+                vbTab & strHistogram
     End Function
     Public Sub New(intID As Integer,
                    intFilledVolume As Integer,
